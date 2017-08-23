@@ -139,7 +139,9 @@ public class LineRendererController : MonoBehaviour {
     }
 
     public void DeleteLine() {
-        lineRenderer.positionCount = 0;
+        if (lineRenderer) {
+            lineRenderer.positionCount = 0;
+        }
     }
 
     public void DeleteTarget() {
