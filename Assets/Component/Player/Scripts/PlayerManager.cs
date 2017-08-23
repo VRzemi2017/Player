@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WandManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour {
     public enum WAND_STATE {
         IDEL,
         WARP,

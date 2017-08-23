@@ -7,12 +7,12 @@ public class WandController : MonoBehaviour {
 
     [SerializeField] LineRendererController m_Line;
 
-    private WandManager.WAND_STATE m_wand_state;
-    private WandManager.PLAYER_STATE m_player_state;
+    private PlayerManager.WAND_STATE m_wand_state;
+    private PlayerManager.PLAYER_STATE m_player_state;
 
     private bool m_is_hit_enemy;
-    public WandManager.WAND_STATE WandState { get { return m_wand_state; } }
-    public WandManager.PLAYER_STATE PlayerState { get { return m_player_state; } }
+    public PlayerManager.WAND_STATE WandState { get { return m_wand_state; } }
+    public PlayerManager.PLAYER_STATE PlayerState { get { return m_player_state; } }
 
     // Update is called once per frame
     void Update ( ) {
@@ -32,19 +32,19 @@ public class WandController : MonoBehaviour {
         }
     }
     private void ChageWandState ( ) {
-        m_wand_state = WandManager.WAND_STATE.IDEL;
+        m_wand_state = PlayerManager.WAND_STATE.IDEL;
         if ( m_Line.IsWarpInput ) {
-            m_wand_state = WandManager.WAND_STATE.WARP;
+            m_wand_state = PlayerManager.WAND_STATE.WARP;
         }
     }
 
     private void ChagePlayerState() {
-        m_player_state = WandManager.PLAYER_STATE.IDEL;
+        m_player_state = PlayerManager.PLAYER_STATE.IDEL;
         if (m_Line.IsWarpInput) {
-            m_player_state = WandManager.PLAYER_STATE.WARP;
+            m_player_state = PlayerManager.PLAYER_STATE.WARP;
         }
         if (m_is_hit_enemy) {
-            m_player_state = WandManager.PLAYER_STATE.DAMAGE;
+            m_player_state = PlayerManager.PLAYER_STATE.DAMAGE;
             m_is_hit_enemy = false;
         }
     }
