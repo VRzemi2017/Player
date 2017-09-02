@@ -7,10 +7,9 @@ public class GemController : MonoBehaviour {
     [SerializeField] List<Color> m_GemColor = new List<Color>( );
     [SerializeField] GameObject m_SmallGemPrefab;
     [SerializeField] Transform m_SmallGemParent;
-    [SerializeField] Vector3 m_SmallGemLenght;
+    [SerializeField] Vector3 m_SmallGemLenght = new Vector3(0, 0.05f, 0.03f);
     [SerializeField] GameObject m_LineRenderer;
-    [SerializeField] float m_getGemAnimationTime;
-    [SerializeField] GameObject m_getGemAnimation;
+    [SerializeField] float m_getGemAnimationTime = 2;
     [SerializeField] GameObject m_hitAnimation;
     private bool m_is_hit_gem = false;
     private bool m_is_game_start = false;
